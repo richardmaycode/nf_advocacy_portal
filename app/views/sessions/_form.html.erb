@@ -1,0 +1,22 @@
+<%= form_for :session, url: session_path do |form| %>
+  <div class="text-field py-4 flex flex-col gap-2">
+    <%= form.label :email, class: "font-semibold" %>
+    <%= form.email_field :email, class: "rounded-md"  %>
+  </div>
+
+  <div class="password-field py-4 flex flex-col gap-2">
+    <%= form.label :password, class: "font-semibold" %>
+    <%= form.password_field :password, class: "rounded-md" %>
+  </div>
+
+  <div class="submit-field my-4">
+    <%= form.submit class: "py-4 px-8 bg-sky-400 rounded-md text-white w-full" %>
+  </div>
+
+  <div class="other-links flex flex-col">
+    <% if Clearance.configuration.allow_sign_up? %>
+      <%= link_to t(".sign_up"), sign_up_path %>
+    <% end %>
+    <%= link_to t(".forgot_password"), new_password_path %>
+  </div>
+<% end %>
