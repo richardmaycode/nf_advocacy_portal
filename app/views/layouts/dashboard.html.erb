@@ -11,13 +11,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="dark:bg-gray-900">
     <%= render "shared/nav" %>
-    <main>
-      <%= render "shared/sidebar" %>
-      <%= tag.div class: "fixed left-[18rem] top-24" do %>
+    <%= render "shared/sidebar" %>
+    <%= tag.main class: "p-4 sm:ml-64" do %>
         <%= yield %>
-      <% end %>
-    </main>
+    <% end %>
   </body>
 </html>
