@@ -13,8 +13,11 @@
 
   <body>
     <%= render "shared/nav" %>
-    <main class="">
-      <%= yield %>
+    <main>
+      <%= render "shared/sidebar" %>
+      <%= tag.div class: "fixed left-[18rem] top-24" do %>
+        <%= yield %>
+      <% end %>
     </main>
   </body>
 </html>
