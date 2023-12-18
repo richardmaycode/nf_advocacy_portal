@@ -1,4 +1,16 @@
-<div>
-  <h1 class="font-bold text-4xl">Admin::Users#index</h1>
-  <p>Find me in app/views/admin/users/index.html.erb</p>
-</div>
+<%= tag.div class: "p-4" do %>
+  <%= render partial: "admin/shared/header", locals: { title: "All Users", summary: "List of all current users of the NF Advocacy Portal. Manage Access, Certifications, and Advocacy Profiles of individuals.", label: "Add User" } %>
+  <%= tag.div class: "overflow-x-auto mt-6" do %>
+    <%= tag.table class: "w-full text-sm text-left text-gray-500 dark:text-gray-400" do %>
+      <%= tag.thead class: "text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark: text-gray-400" do %>
+        <%= tag.tr do %>
+          <%= tag.th "Name", class: "px-6 py-3", scope: "col" %>
+          <%= tag.th "Email", class: "px-6 py-3", scope: "col" %>
+        <% end %>
+      <% end %>
+      <%= tag.tbody do %>
+        <%= render @users %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

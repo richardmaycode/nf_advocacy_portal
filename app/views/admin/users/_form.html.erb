@@ -1,0 +1,19 @@
+<%= tag.div class: "bg-gray-50 rounded dark:bg-gray-800 p-6 md:w-10/12 w-full my-8" do %>
+  <%= form_with model: [:admin, @user] do |form| %>
+    <%= tag.div class: "mb-6" do %>
+      <%= form.label :email, class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+      <%= form.email_field :email, class: "h-12 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "test@test.com", required: true %>
+    <% end %>
+    <%= tag.div class: "mb-6" do %>
+      <%= form.label :password, class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+      <%= tag.div class: "flex gap-4" do %>
+        <%= form.email_field :password, class: "flex-grow h-12 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", required: true %>
+        <%= button_tag "Generate", class: "w-28 h-12 text-indigo-700 hover:text-white border border-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-indigo-500 dark:text-indigo-500 dark:hover:text-white dark:hover:bg-indigo-500 dark:focus:ring-indigo-800" %>
+      <% end %>
+    <% end %>
+    <%= tag.div class: "flex gap-6 flex-wrap sm:flex-nowrap" do %>
+      <%= link_to "Cancel", [:admin, :users], class: "text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900" %>
+      <%= form.submit "Create User", class: "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" %>
+    <% end %>
+  <% end %>
+<% end %>

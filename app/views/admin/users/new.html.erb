@@ -1,4 +1,4 @@
-<div>
-  <h1 class="font-bold text-4xl">Admin::Users#new</h1>
-  <p>Find me in app/views/admin/users/new.html.erb</p>
-</div>
+<%= tag.div class: "p-4" do %>
+  <%= render partial: "admin/shared/header", locals: { title: "Create User", summary: nil, label: nil } %>
+  <%= render "form", locals: { user: @user } %>
+<% end %>
